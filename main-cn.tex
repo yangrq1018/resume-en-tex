@@ -22,8 +22,13 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{hyphenat}
+% \usepackage{fontspec}
+% \defaultfontfeatures{
+%   Path = /usr/share/texmf-dist/fonts/opentype/public/fontawesome/
+% }
+% Need to install FontAwesome.otf to system or user
 \usepackage{fontawesome}
-\input{glyphtounicode}
+% \input{glyphtounicode}
 
 \setCJKmainfont{Noto Serif CJK SC}
 
@@ -62,7 +67,7 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -133,9 +138,8 @@
 \begin{document}
 
 %---------- HEADING ----------
-
 \begin{center}
-    \textbf{\Huge \scshape Yang Ruoqi杨} \\ \vspace{3pt}
+    \textbf{\Huge \scshape 杨若琦} \\ \vspace{3pt}
     \small
     \faMobile \hspace{.5pt} \href{tel:905314204536}{+88 18820180597}
     $|$
@@ -143,98 +147,97 @@
     $|$
     \faGithub \hspace{.5pt} \href{https://github.com/yangrq1018}{GitHub}
     $|$
-    \faGlobe \hspace{.5pt} \href{https://yangruoqi.site}{Website}
+    \faGlobe \hspace{.5pt} \href{https://yangruoqi.site}{网站}
     $|$
-    \faMapMarker \hspace{.5pt} Shenzhen, China
+    \faMapMarker \hspace{.5pt} 广东$ $深圳
 \end{center}
 
 
 
 %----------- EDUCATION -----------
 
-\section{Education}
+\section{教育经历}
   \vspace{3pt}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Imperial College London}                                     {Longdon, UK}
-      {M.Sc. in Finance   \textbf{Classification: Distinction}}     {Sep 2019 \textbf{--} Jun 2020}
-    
+      {伦敦帝国理工}                                    {英国$ $伦敦 }
+      {金融学硕士   \textbf{毕业成绩: Distinction}}     {2019年9月 \textbf{--} 2020年6月}
+
     \resumeEducationHeading
-      {The University of Hong Kong}                              {Hong Kong}
-      {Bachelor of Economics\&Finance;   \textbf{GPA: 3.65/4.30}}{Sep 2015 \textbf{--} Jun 2019}
-      {Minor Degree in Computer Science;   }                     {Sep 2015 \textbf{--} Jun 2019}
-    
+      {香港大学}                              {中国$ $香港}
+      {经济\&金融学学士;   \textbf{GPA: 3.65/4.30}}     {2015年9月 \textbf{--} 2019年6月}
+      {计算机科学辅修;   }            {2015年9月 \textbf{--} 2019年6月}
+
   \resumeSubHeadingListEnd
 
 
 %----------- WORK EXPERIENCE -----------
 
-\section{Work Experience}
+\section{工作经历}
   \vspace{3pt}
   \resumeSubHeadingListStart
-    
+
     \resumeSubheading
-      {Ubiquant Inc.}{Shanghai, China}
-      {Quantitative Researcher}{Aug 2022 \textbf{--} June 2023}
+      {九坤投资}{中国$ $上海}
+      {量化研究员}{2022年8月 \textbf{--} 2023年6月}
         \resumeItemListStart
-            \resumeItem{Reimplemented convertible-bond arbitrage strategy. Continued research in the convertible bond market. }
-            \resumeItem{Created signals of stock market and futures market under a multi-factor strategy framework. }
-            \resumeItem{Contributed to the development of the multi-factor research toolkit. Added Level-2 data source to the library. }
+            \resumeItem{负责可转债策略的实盘维护工作，继续可转债领域的研究}
+            \resumeItem{在多因子框架下，负责股票、期货信号研究，频率包括日频、日内以及更高频}
+            \resumeItem{参与组内使用的各种多因子研究工具的开发和维护}
         \resumeItemListEnd
-    
+
     \resumeSubheading
-      {Xuanling Asset Management}{Shanghai, China}
-      {Quantitative Researcher}{June 2020 \textbf{--} July 2022}
+      {上海悬铃私募基金管理有限公司}{中国$ $上海}
+      {量化研究员}{2020年6月 \textbf{--} 2022年7月}
         \resumeItemListStart
-            \resumeItem{Invented a convertible-bond arbitrage strategy running for more than seven months (AUM $\ge$ 90m). }
-            \resumeItem{Developed a Golang client to receive alpha signals and execute trades by submitting orders to the broker counter. }
-            \resumeItem{Wrote a system to manage the research database. Sourced, cleaned and persisted data from vendors' API. }
+            \resumeItem{研究并落地一个可转债套利策略，运行超过七个月，资产管理规模超过九千万}
+            \resumeItem{开发了一个Golang客户端，用于接收阿尔法信号并通过向经纪柜台提交订单执行交易}
+            \resumeItem{编写了一个管理研究数据库的系统，从供应商的API获取、清理和持久化数据}
         \resumeItemListEnd
-        
+
     % \vspace{15pt}
     \resumeSubheading
-      {Lord Abbett China Asset Management}{Shenzhen, China}
-      {FOF Research Intern}{Jul 2019 \textbf{--} Aug 2019}
+      {诺德基金管理有限公司}{中国$ $深圳}
+      {FOF研究实习生}{2019年7月 \textbf{--} 2019年8月}
         \resumeItemListStart
-            \resumeItem{Researched on quantitative strategies of stock index futures. Applied NLP models to transcripts to U.S. Federal
-             Reserve FOMC interest-rate meetings to predict interest rate changes. }
-            \resumeItem{Wrote a report on the feasibility of introducing U.S. target date funds to China. }
+            \resumeItem{研究股指期货的量化策略，应用自然语言处理（NLP）模型分析美联储FOMC利率会议记录，以预测利率变化}
+            \resumeItem{撰写了一份关于将生命周期基金引入中国的可行性报告，发表于公司FOF投资者手册}
         \resumeItemListEnd
-    
+
   \resumeSubHeadingListEnd
 
 
 
 %----------- AWARDS & ACHIEVEMENTS -----------
 
-\section{Awards \& Achievements}
+\section{奖项与成就}
   \vspace{2pt}
   \resumeSubHeadingListStart
     \small{\item{
-        \textbf{National College Entrance Exam (NCEE):}{ Ranked TOP 200 among Guangdong Province. } \\ \vspace{3pt}
+        \textbf{普通高等学校招生统一考试：}{ 广东省前200名 } \\ \vspace{3pt}
 
-        \textbf{CFA Level 1 Exam:}{ Passed. } \\ \vspace{3pt}
-        
-        \textbf{Lee Shau-kee Student Scholarship:}{ Awarded to undergraduate students with execellent academic results in penultimate year. } \\ \vspace{3pt}
-        
-        \textbf{Twice Dean's List:}{ In sophomore and penultimate year} \\ \vspace{3pt}
-        
-        \textbf{International English Language Testing System (IELTS):}{ Overall Score: 8/9} \\ \vspace{3pt}
-        
-        \textbf{Test of English as a Foreign Language (TOEFL):}{ Overall Score: 106/120}
+        \textbf{CFA Level 1考试：}{ 通过 } \\ \vspace{3pt}
+
+        \textbf{李兆基奖学金：}{ 颁发给大三学生中学业成绩优秀者 } \\ \vspace{3pt}
+
+        \textbf{两次院长荣誉榜：}{ 在第二和第三学年获得 } \\ \vspace{3pt}
+
+        \textbf{国际英语语言测试系统（IELTS）：}{ 总分8分 } \\ \vspace{3pt}
+
+        \textbf{托福考试（TOEFL）：}{ 总分106分 }
     }}
   \resumeSubHeadingListEnd
 
 
 %----------- SKILLS -----------
 
-\section{Skills}
+\section{语言和技能}
   \vspace{2pt}
   \resumeSubHeadingListStart
     \small{\item{
-        \textbf{Programming:}{ C++, Python, Golang, MySQL} \\ \vspace{3pt}
-        \textbf{Languages:}{ Mandarin (Native), English (Professional), Cantonese (Elementary)} \\ \vspace{3pt}
-        \textbf{Project Contributor:}{ gocryptotrader, Hikyuu, ATRI, go-echarts, Clairvoyante} \\
+        \textbf{计算机：}{ 掌握C++, Python, Golang; 熟练使用Linux系统 } \\ \vspace{3pt}
+        \textbf{语言：}{ 普通话（母语）, 英语（流利）, 广东话（日常交流） } \\ \vspace{3pt}
+        \textbf{开源贡献：}{ 向多个超过1000星的Github知名项目贡献过代码，热衷于开源事业 } \\
     }}
   \resumeSubHeadingListEnd
 
