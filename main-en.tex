@@ -20,6 +20,8 @@
 \usepackage{tabularx}
 \usepackage{hyphenat}
 \usepackage{fontawesome}
+\usepackage{xparse}
+
 \input{glyphtounicode}
 
 
@@ -89,12 +91,11 @@
 }
 
 
-\newcommand{\resumeEducationHeading}[6]{
+\newcommand{\resumeEducationHeading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-      \textit{\small#5} & \textit{\small #6} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -153,15 +154,17 @@
 \section{Education}
   \vspace{3pt}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Imperial College London}                                     {Longdon, UK}
-      {M.Sc. in Finance   \textbf{Classification: Distinction}}     {Sep 2019 \textbf{--} Jun 2020}
-    
+    \resumeEducationHeading
+      {Imperial College London (Imperial)}                                     {Longdon, UK}
+      {M.Sc. in Finance; \textbf{Classification: Distinction}}     {Sep 2019 \textbf{--} Jun 2020}
+
     \resumeEducationHeading
       {The University of Hong Kong}                              {Hong Kong}
-      {Bachelor of Economics\&Finance;   \textbf{GPA: 3.65/4.30}}{Sep 2015 \textbf{--} Jun 2019}
-      {Minor Degree in Computer Science;   }                     {Sep 2015 \textbf{--} Jun 2019}
-    
+      {Bachelor of Economics\&Finance; Minor in Computer Science; \textbf{GPA: 3.65/4.30}}{Sep 2015 \textbf{--} June 2019}
+
+    \resumeEducationHeading
+      {George Washington University}                              {Washington, D.C., USA}
+      {Exchange student}                                          {Jan 2018 \textbf{--} June 2018}
   \resumeSubHeadingListEnd
 
 
@@ -170,7 +173,7 @@
 \section{Work Experience}
   \vspace{3pt}
   \resumeSubHeadingListStart
-    
+
     \resumeSubheading
       {Ubiquant Inc.}{Shanghai, China}
       {Quantitative Researcher}{Aug 2022 \textbf{--} June 2023}
@@ -179,7 +182,7 @@
             \resumeItem{Created signals of stock market and futures market under a multi-factor strategy framework. }
             \resumeItem{Contributed to the development of the multi-factor research toolkit. Added Level-2 data source to the library. }
         \resumeItemListEnd
-    
+
     \resumeSubheading
       {Xuanling Asset Management}{Shanghai, China}
       {Quantitative Researcher}{June 2020 \textbf{--} July 2022}
@@ -188,7 +191,7 @@
             \resumeItem{Developed a Golang client to receive alpha signals and execute trades by submitting orders to the broker counter. }
             \resumeItem{Wrote a system to manage the research database. Sourced, cleaned and persisted data from vendors' API. }
         \resumeItemListEnd
-        
+
     % \vspace{15pt}
     \resumeSubheading
       {Lord Abbett China Asset Management}{Shenzhen, China}
@@ -198,7 +201,7 @@
              Reserve FOMC interest-rate meetings to predict interest rate changes. }
             \resumeItem{Wrote a report on the feasibility of introducing U.S. target date funds to China. }
         \resumeItemListEnd
-    
+
   \resumeSubHeadingListEnd
 
 
@@ -212,13 +215,13 @@
         \textbf{National College Entrance Exam (NCEE):}{ Ranked TOP 200 among Guangdong Province. } \\ \vspace{3pt}
 
         \textbf{CFA Level 1 Exam:}{ Passed. } \\ \vspace{3pt}
-        
+
         \textbf{Lee Shau-kee Student Scholarship:}{ Awarded to undergraduate students with execellent academic results in penultimate year. } \\ \vspace{3pt}
-        
+
         \textbf{Twice Dean's List:}{ In sophomore and penultimate year} \\ \vspace{3pt}
-        
+
         \textbf{International English Language Testing System (IELTS):}{ Overall Score: 8/9} \\ \vspace{3pt}
-        
+
         \textbf{Test of English as a Foreign Language (TOEFL):}{ Overall Score: 106/120}
     }}
   \resumeSubHeadingListEnd
@@ -242,10 +245,10 @@
 
 % \section{Certificates}
   % \resumeSubHeadingListStart
-    
+
     % \resumeOrganizationHeading
       % {Procter \& Gamble VIA Certificate Program}{Feb 2022}{Business Skills, Data and Digital Skills, Project Management and Personal Productivity}
-    
+
   % \resumeSubHeadingListEnd
 
 
@@ -254,10 +257,10 @@
 
 % \section{Organizations}
   % \resumeSubHeadingListStart
-    
+
     % \resumeOrganizationHeading
       % {Institute of Electrical and Electronics Engineers (IEEE)}{Feb 2022 -- Present}{Student Member}
-    
+
   % \resumeSubHeadingListEnd
 
 
@@ -275,7 +278,7 @@
 
 % \section{References}
   % \resumeSubHeadingListStart
-    
+
   % \resumeSubHeadingListEnd
 
 
