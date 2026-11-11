@@ -22,7 +22,8 @@ Install TeX Live (including `latexmk`, XeLaTeX, the extra LaTeX packages and
 fonts) and the **Noto Serif CJK SC** system font. On Ubuntu:
 
 ```sh
-sudo apt-get install latexmk texlive-xetex texlive-latex-extra texlive-fonts-extra fonts-noto-cjk
+sudo apt-get install latexmk texlive-xetex texlive-latex-extra texlive-fonts-extra \
+  texlive-lang-cjk texlive-fonts-recommended fonts-font-awesome fonts-noto-cjk
 ```
 
 Compile the English version with pdfLaTeX and the Chinese version with XeLaTeX:
@@ -47,3 +48,6 @@ git push origin v1.0.0
 
 The release workflow uses the repository's built-in `GITHUB_TOKEN`; no additional
 secrets are required.
+
+To release an existing tag after fixing a workflow failure, run the workflow
+manually from the Actions tab and supply that tag as the `tag` input.
