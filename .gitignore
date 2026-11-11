@@ -1,4 +1,5 @@
 aux/
+build/
 
 *.pdf
 *.synctex.gz

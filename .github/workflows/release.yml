@@ -1,0 +1,42 @@
+name: Build and release resumes
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install TeX and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk texlive-xetex texlive-latex-extra texlive-fonts-extra \
+            fonts-noto-cjk
+
+      - name: Compile resumes
+        run: |
+          latexmk -norc -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-cn.tex
+          latexmk -norc -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-en.tex
+          test -s build/main-cn.pdf
+          test -s build/main-en.pdf
+
+      - name: Publish release with PDFs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            build/main-cn.pdf build/main-en.pdf \
+            --verify-tag --title "$GITHUB_REF_NAME" --generate-notes
