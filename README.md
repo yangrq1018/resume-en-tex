@@ -16,6 +16,6 @@ purpose.
 If you are interested and would like to use the project as a template, here is
 how to compile:
 
-`latexmk -xelatex resume-en.tex`
+`latexmk -xelatex main-en.tex`
 
-`latexmk -pdf resume-cn.tex`
+`latexmk -pdf main-cn.tex`
