@@ -1,0 +1,80 @@
+% Shared one-page layout. Author: Martin Yang. License: MIT.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume-layout}[2026/11/09 A4 resume layout]
+\RequirePackage{color}
+\RequirePackage{enumitem}
+\RequirePackage{tabularx}
+\RequirePackage{titlesec}
+\RequirePackage[hidelinks,unicode]{hyperref}
+
+% A4: 18 mm side margins and 17 mm top/bottom margins.
+\setlength{\textwidth}{\dimexpr\paperwidth-36mm\relax}
+\setlength{\textheight}{\dimexpr\paperheight-34mm\relax}
+\setlength{\oddsidemargin}{\dimexpr18mm-1in\relax}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\topmargin}{\dimexpr17mm-1in\relax}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\footskip}{12pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\emergencystretch}{1.5em}
+\urlstyle{same}
+
+\definecolor{resumeAccent}{rgb}{0.10,0.19,0.28}
+\definecolor{resumeMuted}{rgb}{0.34,0.38,0.42}
+\definecolor{resumeRule}{rgb}{0.76,0.79,0.82}
+
+\titleformat{\section}
+  {\fontsize{11}{14}\selectfont\bfseries\color{resumeAccent}}
+  {}{0pt}{}[{\color{resumeRule}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{12pt}{5pt}
+
+\newcommand{\resumeContactSeparator}{%
+  \hspace{6pt}{\color{resumeRule}\rule[-1pt]{0.3pt}{8pt}}\hspace{6pt}%
+}
+% Opt in per document so the English version can retain its current header.
+\newcommand{\resumeHeaderIcon}[1]{}
+\newcommand{\resumeHeader}[4]{%
+  \noindent
+  {\fontsize{27}{31}\selectfont\bfseries\color{resumeAccent}#1}%
+  \hfill{\fontsize{9.2}{12}\selectfont\color{resumeMuted}\resumeHeaderIcon{\faMapMarker}#2}\par
+  \vspace{6pt}
+  {\fontsize{9}{12}\selectfont\color{resumeMuted}%
+    \resumeHeaderIcon{\faMobile}\href{tel:18820180597}{+86 18820180597}%
+    \resumeContactSeparator
+    \resumeHeaderIcon{\faAt}\href{mailto:yang.ruoqi@outlook.com}{yang.ruoqi@outlook.com}%
+    \resumeContactSeparator
+    \resumeHeaderIcon{\faGithub}\href{https://github.com/yangrq1018}{#3}%
+    \resumeContactSeparator
+    \resumeHeaderIcon{\faGlobe}\href{https://#4}{#4}\par}%
+  \vspace{2pt}
+}
+
+% Flexible columns keep long degree names clear of the dates and locations.
+\newcommand{\resumeEntry}[4]{%
+  \par\addvspace{6pt}\noindent
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{10pt}}r@{}}
+    {\fontsize{10.5}{13}\selectfont\bfseries #1} &
+    {\fontsize{9.1}{12}\selectfont\color{resumeMuted}#4} \\
+    {\fontsize{9.5}{12.5}\selectfont #3} &
+    {\fontsize{9.1}{12}\selectfont\color{resumeMuted}#2}
+  \end{tabularx}\par\nobreak
+}
+
+\newenvironment{resumeItems}{%
+  \begin{itemize}[leftmargin=11pt,
+    label={\textcolor{resumeMuted}{\fontsize{8}{8}\selectfont\ensuremath{\bullet}}},labelsep=5pt,
+    topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt]
+  \fontsize{10}{13}\selectfont
+}{\end{itemize}}
+
+\newcommand{\resumeFact}[2]{%
+  \par\addvspace{3.5pt}\noindent
+  {\fontsize{10}{13}\selectfont\textbf{#1} #2\par}%
+}
+
+\AtBeginDocument{\fontsize{10}{13}\selectfont}
