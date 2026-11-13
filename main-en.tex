@@ -4,6 +4,10 @@
 \usepackage[english]{babel}
 \usepackage[sfdefault]{noto-sans}
 \usepackage{resume-layout}
+\usepackage{fontawesome}
+\renewcommand{\resumeHeaderIcon}[1]{#1\hspace{3pt}}
+\linespread{0.93}
+\titlespacing*{\section}{0pt}{7pt}{3pt}
 \input{glyphtounicode}
 \pdfgentounicode=1
 \hypersetup{pdfauthor={Yang Ruoqi},pdftitle={Yang Ruoqi - Resume},pdflang={en-US}}
@@ -11,61 +15,65 @@
 \begin{document}
 
 \resumeHeader{Yang Ruoqi}{Shenzhen, China}
-  {github.com/yangrq1018}{yangruoqi.site}
+  {github.com/yangrq1018}{yangruoqi-site.pages.dev}
+
+\section{Education}
+
+\resumeEntry{Imperial College London}{London, UK}
+  {M.Sc. in Finance; \textbf{Distinction}}{Sep 2019 -- Jun 2020}
+
+\resumeEntry{The University of Hong Kong}{Hong Kong, China}
+  {Bachelor of Economics \& Finance; Minor in Computer Science; \textbf{GPA: 3.65/4.30}}
+  {Sep 2015 -- Jun 2019}
+
+\resumeEntry{George Washington University}{Washington, D.C., USA}
+  {Exchange Student}{Jan 2018 -- Jun 2018}
 
 \section{Work Experience}
+
+\resumeEntry{Yintai Securities, Proprietary Investment Dept.}{Shenzhen, China}
+  {Investment Manager}{Jan 2026 -- Nov 2026}
+\begin{resumeItems}
+  \item Managed Yintai 003 Convertible Bond No.\ 1; outperformed the convertible bond ETF (511380.SH) by \textbf{6.51 percentage points} from May 19 to Oct 30, 2026. Maximum weekly NAV drawdown: \textbf{7.92\%} (ETF: \textbf{14.43\%}).
+  \item Allocated proprietary capital across the team's equity, convertible bond and stock-index futures strategies, and money market funds.
+\end{resumeItems}
+
+\resumeEntry{Xiaoniu Private Fund Management}{Shenzhen, China}
+  {Fund Manager}{Jun 2024 -- Jan 2026}
+\begin{resumeItems}
+  \item Ran an enhanced convertible bond multi-factor strategy; developed XTP connectivity, deployed trading infrastructure at the Shanghai Stock Exchange data center, and analyzed risk using the Barra model.
+  \item Built an end-to-end investment research and trading framework covering data acquisition, storage, factor research, machine learning models, backtesting, live trading and post-investment evaluation.
+  \item Expanded the equity multi-factor library using tick-level trade and order data.
+\end{resumeItems}
 
 \resumeEntry{Ubiquant Inc.}{Shanghai, China}
   {Quantitative Researcher}{Aug 2022 -- Jun 2023}
 \begin{resumeItems}
-  \item Reimplemented convertible-bond arbitrage strategy.\\
-    Continued research in the convertible bond market.
-  \item Created signals of stock market and futures market under a multi-factor strategy framework.
-  \item Contributed to the development of the multi-factor research toolkit.\\
-    Added Level-2 data source to the library.
+  \item Maintained a live convertible bond strategy and continued research in the asset class.
+  \item Researched daily and intraday equity signals within a multi-factor framework.
+  \item Helped develop and maintain the team's multi-factor research tools.
 \end{resumeItems}
 
 \resumeEntry{Xuanling Asset Management}{Shanghai, China}
   {Quantitative Researcher}{Jun 2020 -- Jul 2022}
 \begin{resumeItems}
-  \item Invented a convertible-bond arbitrage strategy running for more than seven months (\textbf{AUM $\ge$ 90m}).
-  \item Developed a Golang client to receive alpha signals and execute trades by submitting orders to the broker counter.
-  \item Wrote a system to manage the research database.\\
-    Sourced, cleaned and persisted data from vendors' API.
+  \item Developed and deployed a pricing-neutral convertible bond strategy hedged with IC stock-index futures; ran live for \textbf{7 months} with peak AUM of \textbf{RMB 90 million}.
+  \item Built a high-performance Golang execution program to submit orders to the trading gateway.
+  \item Developed the QR research database to acquire, clean and persist data from vendor APIs.
 \end{resumeItems}
-
-\resumeEntry{Lord Abbett China Asset Management}{Shenzhen, China}
-  {FOF Research Intern}{Jul 2019 -- Aug 2019}
-\begin{resumeItems}
-  \item Researched on quantitative strategies of stock index futures. Applied NLP models to transcripts to U.S. Federal Reserve FOMC interest-rate meetings to predict interest rate changes.
-  \item Wrote a report on the feasibility of introducing U.S. target date funds to China.
-\end{resumeItems}
-
-\section{Education}
-
-\resumeEntry{Imperial College London (Imperial)}{Longdon, UK}
-  {M.Sc. in Finance; \textbf{Classification: Distinction}}{Sep 2019 -- Jun 2020}
-
-\resumeEntry{The University of Hong Kong}{Hong Kong}
-  {Bachelor of Economics \& Finance; Minor in Computer Science; \textbf{GPA: 3.65/4.30}}
-  {Sep 2015 -- Jun 2019}
-
-\resumeEntry{George Washington University}{Washington, D.C., USA}
-  {Exchange student}{Jan 2018 -- Jun 2018}
 
 \section{Awards \& Achievements}
 
-\resumeFact{National College Entrance Exam (NCEE):}{Ranked TOP 200 among Guangdong Province.}
-\resumeFact{CFA Level 1 Exam:}{Passed.}
-\resumeFact{Lee Shau-kee Student Scholarship:}{Awarded to undergraduate students with execellent academic results in penultimate year.}
-\resumeFact{Twice Dean's List:}{In sophomore and penultimate year}
-\resumeFact{International English Language Testing System (IELTS):}{Overall Score: 8/9}
-\resumeFact{Test of English as a Foreign Language (TOEFL):}{Overall Score: 106/120}
+\resumeFact{National College Entrance Exam:}{Ranked in the top 200 in Guangdong Province.}
+\resumeFact{CFA Level I:}{Passed.}
+\resumeFact{Lee Shau-kee Scholarship:}{Awarded for academic excellence in the third year.}
+\resumeFact{Dean's List (twice):}{Second and third years.}
+\resumeFact{English Tests:}{IELTS overall 8; TOEFL overall 106.}
 
-\section{Skills}
+\section{Languages \& Skills}
 
-\resumeFact{Programming:}{C++, Python, Golang, MySQL}
-\resumeFact{Languages:}{Mandarin (Native), English (Professional), Cantonese (Elementary)}
-\resumeFact{Project Contributor:}{gocryptotrader, Hikyuu, ATRI, go-echarts, Clairvoyante}
+\resumeFact{Computing:}{C++, Python, Golang; proficient in Linux.}
+\resumeFact{Languages:}{Mandarin (native), English (fluent), Cantonese (conversational).}
+\resumeFact{Open Source:}{Contributed code to multiple GitHub projects with 1,000+ stars; open-source enthusiast.}
 
 \end{document}
