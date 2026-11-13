@@ -1,6 +1,9 @@
 % Shared one-page layout. Author: Martin Yang. License: MIT.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{resume-layout}[2026/11/09 A4 resume layout]
+\newif\ifresumePublic
+\DeclareOption{public}{\resumePublictrue}
+\ProcessOptions\relax
 \RequirePackage{color}
 \RequirePackage{enumitem}
 \RequirePackage{tabularx}
@@ -38,15 +41,28 @@
 }
 % Opt in per document so the English version can retain its current header.
 \newcommand{\resumeHeaderIcon}[1]{}
+% Public PDFs contain a solid mask, with neither contact text nor a link target.
+% Measure in the current font to keep the header's spacing unchanged.
+\newlength{\resumeContactWidth}
+\newcommand{\resumeContact}[2]{%
+  \ifresumePublic
+    \begingroup
+    \settowidth{\resumeContactWidth}{#2}%
+    {\color{black}\rule[-0.15ex]{\resumeContactWidth}{1.1ex}}%
+    \endgroup
+  \else
+    \href{#1}{#2}%
+  \fi
+}
 \newcommand{\resumeHeader}[4]{%
   \noindent
   {\fontsize{27}{31}\selectfont\bfseries\color{resumeAccent}#1}%
   \hfill{\fontsize{9.2}{12}\selectfont\color{resumeMuted}\resumeHeaderIcon{\faMapMarker}#2}\par
   \vspace{6pt}
   {\fontsize{9}{12}\selectfont\color{resumeMuted}%
-    \resumeHeaderIcon{\faMobile}\href{tel:18820180597}{+86 18820180597}%
+    \resumeHeaderIcon{\faMobile}\resumeContact{tel:18820180597}{+86 18820180597}%
     \resumeContactSeparator
-    \resumeHeaderIcon{\faAt}\href{mailto:yang.ruoqi@outlook.com}{yang.ruoqi@outlook.com}%
+    \resumeHeaderIcon{\faAt}\resumeContact{mailto:yang.ruoqi@outlook.com}{yang.ruoqi@outlook.com}%
     \resumeContactSeparator
     \resumeHeaderIcon{\faGithub}\href{https://github.com/yangrq1018}{#3}%
     \resumeContactSeparator

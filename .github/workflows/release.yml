@@ -35,14 +35,22 @@ jobs:
           sudo apt-get -o Acquire::Retries=3 update
           sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends \
             latexmk texlive-xetex texlive-latex-extra texlive-fonts-extra \
-            texlive-lang-chinese texlive-fonts-recommended fonts-font-awesome fonts-noto-core fonts-noto-cjk
+            texlive-lang-chinese texlive-fonts-recommended fonts-font-awesome fonts-noto-core fonts-noto-cjk \
+            python3-pypdf
 
       - name: Compile resumes
         run: |
           latexmk -norc -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-cn.tex
           latexmk -norc -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-en.tex
+          latexmk -norc -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-cn-public.tex
+          latexmk -norc -pdf -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main-en-public.tex
           test -s build/main-cn.pdf
           test -s build/main-en.pdf
+          test -s build/main-cn-public.pdf
+          test -s build/main-en-public.pdf
+
+      - name: Verify public PDFs contain no contact information
+        run: python3 scripts/check_public_pdfs.py build
 
       - name: Publish release with PDFs
         env:
@@ -51,4 +59,5 @@ jobs:
         run: |
           gh release create "$RELEASE_TAG" \
             build/main-cn.pdf build/main-en.pdf \
+            build/main-cn-public.pdf build/main-en-public.pdf \
             --verify-tag --title "$RELEASE_TAG" --generate-notes
