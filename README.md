@@ -23,7 +23,7 @@ fonts) and the **Noto Serif CJK SC** system font. On Ubuntu:
 
 ```sh
 sudo apt-get install latexmk texlive-xetex texlive-latex-extra texlive-fonts-extra \
-  texlive-lang-chinese texlive-fonts-recommended fonts-font-awesome fonts-noto-cjk
+  texlive-lang-chinese texlive-fonts-recommended fonts-font-awesome fonts-noto-core fonts-noto-cjk
 ```
 
 Compile the English version with pdfLaTeX and the Chinese version with XeLaTeX:
