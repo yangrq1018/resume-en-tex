@@ -50,7 +50,9 @@ jobs:
           test -s build/main-en-public.pdf
 
       - name: Verify public PDFs contain no contact information
-        run: python3 scripts/check_public_pdfs.py build
+        run: |
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/check_public_pdfs.py build
 
       - name: Publish release with PDFs
         env:

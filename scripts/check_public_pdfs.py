@@ -20,7 +20,10 @@ def read_pdf(path):
     text = "\n".join(page.extract_text() or "" for page in reader.pages)
     uris = []
     for page in reader.pages:
-        for ref in page.get("/Annots", []):
+        annotations = page.get("/Annots")
+        if annotations is None:
+            continue
+        for ref in annotations.get_object():
             annotation = ref.get_object()
             action = annotation.get("/A")
             if action:

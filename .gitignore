@@ -3,3 +3,5 @@ build/
 
 *.pdf
 *.synctex.gz
+
+__pycache__/
